@@ -1,4 +1,5 @@
 
+
     <!-- AVEC L'ATTRIBUT id ON PEUT AJOUTER DES ANCRES DANS LA PAGE -->
     <section id="s1">
         <h2>Compétences</h2>
