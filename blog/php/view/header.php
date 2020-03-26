@@ -13,6 +13,7 @@
             <a href="index.php">accueil</a>
             <a href="news.php">news</a>
             <a href="contact.php">contact</a>
+            
         </nav>
     </header>
     <main>
