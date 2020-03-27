@@ -16,15 +16,16 @@
          const ip = await fetch("https://api.ipify.org?format=json")
 
          .then(resultat => resultat.json())
-             .then(json => json.ip)
+         .then(json => json.ip)
+         console.log(ip)
+         
 
          ville = await fetch(
-                 "http://api.ipstack.com/" +
-                 ip +
-                 "?access_key=30c029b1d2a8dcdcdf26ac5a0e07b914"
+                 "http: //api.ipstack.com/" + ip + "? access_key = 48b14d4a24e1926ea5445db7137e0432 "
              )
              .then(resultat => resultat.json())
              .then(json => json.city)
+         console.log(ville)
      } else {
          ville = document.querySelector('#ville').textContent;
      }
@@ -36,7 +37,7 @@
      .then(resultat => resultat.json())
          .then(json => json)
 
-
+     displayWeatherInfos(meteo)
 
  }
 
