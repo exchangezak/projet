@@ -21,6 +21,7 @@ ody {
     transition: all 250ms ease;
     display: none;
   }
+  
   #modal {
     width: 400px;
     height: 400px;
