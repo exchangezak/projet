@@ -17,4 +17,4 @@ function hidePopup() {
 window.addEventListener("mouseout", displayPopup,{once:true});
 
 // on ajoute un écouteur sur l'événement click sur le bouton de fermeture de la modal
-close.addEventListener("click", hidePopup);
+close.addEventListener("click", hidePopup); 
