@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+    border: solid 3px black;
+    margin:0px 700px;
+    border-radius: 30px;
+    
+}
+.label{
+    font-size:20px;
+    margin-top: 15px;
+}
+.input{
+    width:600px;
+    height:20px;
+    margin-top: 15px;
+}
+.container{
+    margin-top: 50px;
+}
+button{
+    margin-top: 15px;
+    margin-left:400px
+    width:600px;
+}
