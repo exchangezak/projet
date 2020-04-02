@@ -23,10 +23,8 @@
         <button>save</button>
         </div>
     </form>
-   <br><br>
-   <br>
-   <br>
-   <br> <hr>
+   
+ <hr>
     <div class="todos"></div>
 <script src="assets/js/main.js"></script>
 </body>

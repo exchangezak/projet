@@ -14,18 +14,60 @@ class Model
 
         $query = 'SELECT * FROM todos'; // ceci est juste une chaîne de caractères
 
-        $PdoStatement = $pdo->prepare($query);
+        // on pourrait très bien passer la requête directement en paramètre à prepare()
+        // $PdoStatement = $pdo->prepare('SELECT * FROM todo');
 
+        $PdoStatement = $pdo->prepare($query);
         $PdoStatement->execute();
 
         // debug : affichage du résultat
-        print_r($PdoStatement->fetchAll());
+        // print_r($PdoStatement->fetchAll());
+
+        // je return le résultat de ma requête
+
+        return $PdoStatement->fetchAll();
     }
-    public function createtodo($todo){
-        $pdo=$this->getConnection();
-        $query='INSERT INTO todos(title,description) VALUES(:title,:description)';
+
+    // ici $todo sera un tableau associatif avec comme clés title, description
+    /* $todo = [
+        "title" => "titre de la tâche",
+        "description" => "description"
+    ];
+    */
+    public function createTodo($todo)
+    {
+        // TODO établir une connexion à la db
+        $pdo = $this->getConnection();
+
+        // TODO écrire la requête en insertion
+        $query = 'INSERT INTO todos (title, description) VALUES (:title, :description)';
+
+        // TODO préparer la requête
         $PdoStatement = $pdo->prepare($query);
+
+        // TODO exécuter le requête en passant les bonnes valeurs
+        // TODO retourner le résultat de la requête (dans notre cas true ou false)
         return $PdoStatement->execute($todo);
+    }
+
+    public function deleteTodo($todo)
+    {
+        // TODO établir une connexion à la db
+        $pdo = $this->getConnection();
+
+        // TODO écrire la requête en delete
+        $query = 'DELETE FROM todos WHERE id = :id';
+
+        // TODO préparer la requête
+        $PdoStatement = $pdo->prepare($query);
+
+        // TODO exécuter la requête en passant la bonne valeur
+        // TODO retourner le résultat de la requête (dans notre cas true ou false)
+        $values = [
+            'id' => $todo['id'],
+        ];
+
+        return $PdoStatement->execute($values);
     }
 
     // on crée une méthode qui va nous permettre de créer une nouvelle instance de la classe Database et qui va retourner un objet PDO
@@ -37,31 +79,14 @@ class Model
         // ici je retourne un objet PDO que je pourrai utiliser pour mes requêtes
         return $db->connect();
     }
-    public function deletetodo($todo){
-        $pdo=$this->getConnection();
-        $query = 'DELETE FROM todos WHERE id = :id';
-
-        // TODO préparer la requête
-        $PdoStatement = $pdo->prepare($query);
-        $values = [
-            'id' => $todo['id'],
-        ];
-
-        return $PdoStatement->execute($values);
-
-    }
 }
-$model = new Model();
-// $reponse=$model->createtodo(['title'=>'je suis',
-// 'description'=>'model'
-// ]
-// );
-// var_dump($reponse);
-// $model->getTodos();
-$response = $model->deletetodo([
-    'id' => '12'
-]);
 
-var_dump($response);
+// $model = new Model();
 
+// $response = $model->deleteTodo([
+//     'id' => '91',
+// ]);
 
+// var_dump($response);
+
+//$model->getTodos();
