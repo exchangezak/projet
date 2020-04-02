@@ -37,12 +37,31 @@ class Model
         // ici je retourne un objet PDO que je pourrai utiliser pour mes requêtes
         return $db->connect();
     }
+    public function deletetodo($todo){
+        $pdo=$this->getConnection();
+        $query = 'DELETE FROM todos WHERE id = :id';
+
+        // TODO préparer la requête
+        $PdoStatement = $pdo->prepare($query);
+        $values = [
+            'id' => $todo['id'],
+        ];
+
+        return $PdoStatement->execute($values);
+
+    }
 }
 $model = new Model();
-$reponse=$model->createtodo(['title'=>'je suis',
-'description'=>'model'
-]
-);
-var_dump($reponse);
+// $reponse=$model->createtodo(['title'=>'je suis',
+// 'description'=>'model'
+// ]
+// );
+// var_dump($reponse);
 // $model->getTodos();
+$response = $model->deletetodo([
+    'id' => '12'
+]);
+
+var_dump($response);
+
 
