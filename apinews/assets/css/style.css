@@ -1,1 +1,25 @@
+.recherche{
+    margin-left:600px;
+}
+.input{
+  height: 20px;
+  margin-top: 20px;
+}
+input{
+    margin-top: 20px;
+}
+*{
+    background-color: rgb(71, 255, 240);
+}
+h1{
+    text-align: center;
+    border:solid 2px black;
+    border-radius: 20px;
+    background-color: rgb(15, 156, 221);
+}
+footer{
+    border:solid 2px black;
+    border-radius: 20px;
+    background-color: rgb(15, 156, 221);
 
+}
