@@ -17,9 +17,11 @@ h1{
     border-radius: 20px;
     background-color: rgb(15, 156, 221);
 }
-footer{
+
+footer p{
     border:solid 2px black;
     border-radius: 20px;
     background-color: rgb(15, 156, 221);
+    padding:15px;
 
 }
