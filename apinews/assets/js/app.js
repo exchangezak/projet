@@ -34,9 +34,4 @@ recherche.addEventListener("submit",function(event){
 
 })
 
-    
-
-
-
-
 

@@ -1,0 +1,79 @@
+body{
+    font-family: 'lato',sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+}
+img{
+    height: 210px;
+    width:200px;
+    object-fit: cover;
+}
+.heading{
+    text-align: center;
+    padding-bottom: 40px;
+
+}
+#about{
+    padding-top: 100px;
+    background:#262730;
+}
+.photo{
+    text-align: center;
+    float:none;
+    margin:0 auto;
+}
+#about .heading h1{
+    color:#eff0d1;
+  
+}
+#about .heading h3{
+    color:#77ba99;
+}
+.button1{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top:20px;
+    padding:18px 50px;
+    border:solid 1px #eff0d1;
+    color:#eff0d1;
+    display:inline-block;
+    border-radius: 3px;
+    transition: all 0.3s ease-in 0s;
+}
+.button1:hover{
+    background-color: #eff0d1;
+    color:#77ba99;
+    text-decoration: none;
+}
+section{
+    padding:45px 0px 80px 0px;
+}
+.red-divider{
+    width:100px;
+    height: 2px;
+    background: #77ba99;
+    margin: 0 auto;
+}
+/* partie skills */
+#skills{
+    background:#eff0d1;
+}
+#skills .heading h2{
+    color:#77ba99;
+    text-transform: uppercase;
+    padding-top: 20px;
+
+}
+#skills .progress{
+    height: 16%;
+    margin:30px 20px;
+    background: #77ba99;
+}
+#skills .progress h5{
+    text-shadow: 1px 1px 1px #232020;
+    padding-top: 8px;
+}
+#skills .progress-bar{
+    background: #262730;
+}
