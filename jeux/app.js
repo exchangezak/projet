@@ -1,3 +1,4 @@
+//recuperer l'element canvas du dom 
 let canvas=document.querySelector("#myCanvas");
 let ctx=canvas.getContext('2d');
 let ballradius=10;
@@ -76,7 +77,7 @@ function drawPaddle(){
 function drawBall(){
     ctx.beginPath();
     ctx.arc(x,y,ballradius,0,Math.PI*2);
-    ctx.fillStyle="blue";
+    ctx.fillStyle="pink";
     ctx.fill();
     ctx.closePath();
 }
