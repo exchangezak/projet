@@ -9,10 +9,10 @@
       <h2>Now playing : {{ current.title }}</h2>
       <p>By : {{ current.artist }}</p>
       <!-- zone où on va afficher les contrôles du player -->
-      <button>Prev</button>
-      <button @click="play">Play</button>
-      <button @click="pause">Pause</button>
-      <button>Next</button>
+      <button @click="prev" :disabled="index <= 0">Prev</button>
+      <button v-if="!isPlaying" @click="play">Play</button>
+      <button v-else @click="pause">Pause</button>
+      <button @click="next" :disabled="index >= songs.length - 1">Next</button>
     </section>
     <section>
       <!-- zone où on va afficher notre playlist -->
@@ -20,7 +20,7 @@
       <div v-for="song in songs" :key="song.src">
         <h3>Track : {{ song.title }}</h3>
         <p>Artist : {{ song.artist }}</p>
-        <button>Play</button>
+        <button @click="play(song)">Play</button>
       </div>
     </section>
   </div>
@@ -39,6 +39,7 @@ export default {
     return {
       current: {},
       index: 0,
+      isPlaying: false,
       songs: [
         {
           title: "Seattle",
@@ -59,7 +60,7 @@ export default {
           title: "Straight Shot",
           artist: "Yung Kartz",
           src: require("../assets/music/Yung_Kartz_-_07_-_Straight_Shot.mp3"),
-         },
+      },
       ],
       // next on va initialiser notre player
       player: new Audio(),
@@ -78,20 +79,53 @@ export default {
         this.current = song;
         this.player.src = this.current.src;
       }
+      this.isPlaying = true;
       this.player.play();
     },
     pause() {
+      this.isPlaying = false;
       this.player.pause();
+    },
+    prev() {
+      // on vérifie que l'index n'est pas inférieur à la longueur du tableau songs
+      if (this.index <= 0) {
+        this.index = 0;
+        // si on veut revenir à la première chanson
+        // this.index = 0;
+      } else {
+        this.index--;
+      }
+
+      // on remplace la valeur de this.current par la chanson sélectionnée
+      this.current = this.songs[this.index];
+
+      // on passe la nouvelle source au player
+      this.player.src = this.current.src;
+      this.isPlaying = true;
+      this.player.play();
+    },
+    next() {
+      // on vérifie que l'index n'est pas supérieur à la longueur du tableau songs
+      if (this.index >= this.songs.length - 1) {
+        this.index = this.songs.length - 1;
+        // si on veut revenir à la première chanson
+        // this.index = 0;
+      } else {
+        this.index++;
+      }
+
+      // on remplace la valeur de this.current par la chanson sélectionnée
+      this.current = this.songs[this.index];
+
+      // on passe la nouvelle source au player
+      this.player.src = this.current.src;
+      this.isPlaying = true;
+      this.player.play();
     },
   },
 };
-
 </script>
 
 <style>
-h1{
-    color:blue;
-    
-}
 /* Ici on va écrire note code CSS */
 </style>
