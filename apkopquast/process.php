@@ -4,8 +4,8 @@
 // mon code php doit charger le bon fichier data en fonction de la demande qu'il reçoit
 
 // Debug : je teste les param que je reçois dans l'url
-// print_r($_GET);
-$name = $_GET['query'];
+print_r($_GET);
+// $name = $_GET['query'];
 
 // je construit le nom du fichier dont je vais avoir besoin pour le traitement
 $dataSource = "{$name}.php";

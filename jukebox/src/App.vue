@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <img alt="Vue logo" src="./assets/music.png" />
     <Player title="ZAKARIA MUSIC" tagline="Listen to my fav music Rap" />
   </div>
 </template>

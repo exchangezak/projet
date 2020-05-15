@@ -127,5 +127,8 @@ export default {
 </script>
 
 <style>
+span{
+    color:green;
+}
 /* Ici on va écrire note code CSS */
 </style>
